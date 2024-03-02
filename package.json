@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "http://EdwardPunzalan.github.io/CTMKAds",
+  "homepage": "https://EdwardPunzalan.github.io/CTMKAds",
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "animate.css": "^4.1.1",
