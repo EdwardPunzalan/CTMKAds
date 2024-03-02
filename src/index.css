@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Color 3 on Pallete */
+.bg-myblue {
+    background: #EBF8F8;
+}
+
+/* Color 2 on Pallete */
+.bg-blue2 {
+    background: #B4D4DC;
+}
+
+/* Color 5 on Pallete */
+.text-myDb {
+    color: #106D8F;
+
+}
+
+/* Contrasting Book Now color */
+.bg-bn {
+    background-color: #FF6B6B;
+}
