@@ -3,14 +3,18 @@ import './App.css'
 import Header from "./Header/Header.jsx"
 import Body from "./Body/Body.jsx"
 import Footer from "./Footer/Footer.jsx"
+import MetaPixel from './MetaPixel.jsx';
 
 
 function App() {
   return (
-    <Router>
-      <Body />
-      <Footer />
-    </Router>
+    <>
+      <Router>
+        <Body />
+        <Footer />
+      </Router>
+      <MetaPixel />
+    </>
   )
 }
 
