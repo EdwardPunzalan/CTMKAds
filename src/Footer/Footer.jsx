@@ -20,10 +20,9 @@ function Footer() {
             <hr />
             <footer className="bg-myblue flex flex-col text-center p-4">
                 <div className='flex gap-4 justify-center py-2'>
-                    <a href="#!"><img src={fb} alt="Facebook" className='w-8'/></a>
-                    <a href="#!"><img src={wap} alt="WhatsApp" className='w-8'/></a>
-                    <a href="#!"><img src={insta} alt="Instagram" className='w-8'/></a>
-                    <a href="#!"><img src={ttok} alt="TikTok" className='w-8'/></a>
+                    <a href="https://www.facebook.com/CTMKMobileDetailing/" target="blank_" ><img src={fb} alt="Facebook" className='w-8'/></a>
+                    <a href="https://www.instagram.com/ctmk_mobiledetailing/" target="blank_" ><img src={insta} alt="Instagram" className='w-8'/></a>
+                    <a href="https://www.tiktok.com/@ctmk_detailing?_t=8i1bWk4yK30&_r=1" target="blank_" ><img src={ttok} alt="TikTok" className='w-8'/></a>
                 </div>
                 <hr className='my-4 w-4/12 md:w-2/12 border-solid border-black self-center'/>
                 <div className="flex flex-col md:flex-row mt-2 justify-center gap-2 md:gap-1 items-center">
