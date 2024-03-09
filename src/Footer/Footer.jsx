@@ -36,7 +36,6 @@ function Footer() {
             <div style={overlay}></div>
             <hr />
             <FooterAbout />
-            <FooterMenu />
             <hr className='my-4 w-9/12 md:w-10/12 border-solid border-black self-center' />
             <div className="flex flex-col md:flex-row mt-2 justify-center gap-2 md:gap-1 items-center">
                 <p className='text-sm md:text-lg'>Copyright &copy; {year} CTMK</p>

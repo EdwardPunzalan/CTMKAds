@@ -29,9 +29,10 @@ function Welcome() {
         <p className="py-2 text-sm sm:text-lg md:text-xl font-light w-full sm:w-10/12 md:w-7/12 font-medium text-myDb ">
           Trusted with over 50+ 5 Star Google Reviews.
         </p>
-        <div className="flex flex-wrap gap-2 sm:gap-4">
-          <a href='https://api.leadconnectorhq.com/widget/service-menu/65e358086ba2ab3555cad7f2' target='blank_' className="bg-bn hover:bg-red-500 py-2 px-4 sm:py-4 sm:px-10 text-xs sm:text-sm md:text-base rounded-lg font-light drop-shadow">Book Now</a>
-          <a href="tel:+19549450770" className="bg-blue-200 bg-opacity-60 hover:bg-blue-500 py-2 px-4 sm:py-4 sm:px-10 text-xs sm:text-sm md:text-base rounded-lg font-light drop-shadow">Call Now</a>
+        <div className="flex gap-4 sm:flex-row flex-col">
+          <a href="tel:+19549450770" className="h-12 text-center sm:h-auto bg-blue-200 bg-opacity-60 hover:bg-blue-500 py-2 px-2 sm:py-4 sm:px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded-lg font-light drop-shadow text-lg sm:text-sm md:text-base lg:text-lg transition ease-in-out duration-150">
+            Call Now
+          </a>
         </div>
       </div>
       <div style={{
