@@ -19,15 +19,6 @@ const servicePrices = {
 function ServiceCards() {
     const [hoverIndex, setHoverIndex] = useState(null);
 
-    const handleAddOnClick = (serviceName, price) => {
-        fbq('track', 'Lead', {
-            content_name: 'Package Booking',
-            content_category: 'Add-On Services'
-        });
-
-        window.open("https://api.leadconnectorhq.com/widget/service-menu/65e358086ba2ab3555cad7f2", '_blank');
-    };
-
     return (
         <div className="container mx-auto px-4 py-8">
             <h1 className='font-semibold text-center text-4xl pb-4'>ADD ONS</h1>
@@ -42,10 +33,8 @@ function ServiceCards() {
                             boxShadow: hoverIndex === index ? '0 0 10px #1F51FF, 0 0 15px #1F51FF, 0 0 20px #1F51FF' : 'none',
                             borderColor: '#106D8F',
                         }}
-                        onClick={() => handleAddOnClick(serviceName, price)} // Add click event handler
                     >
                         <h3 className="text-xl font-semibold">{serviceName}</h3>
-                        <p className="text-lg font-medium my-2">{price}</p>
                     </div>
                 ))}
             </div>

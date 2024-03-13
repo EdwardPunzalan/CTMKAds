@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { CheckCircleIcon } from '@heroicons/react/24/solid';
+import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import Modal from 'react-modal';
+import LeadForm from './LeadForm.jsx'
+
+Modal.setAppElement('#root');
 
 const packageDetails = {
     '1': {
@@ -121,6 +125,44 @@ const vehicleTypes = ["2 Door Car", "Sedan", "SUV", "Truck"];
 const Packages = () => {
     const [selectedPackage, setSelectedPackage] = useState('1');
     const [hoverIndex, setHoverIndex] = useState(null); // Track hover state
+    const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+
+    // Function to open modal
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    // Function to close modal
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            background: '#fff',
+            overflow: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            borderRadius: '4px',
+            outline: 'none',
+            width: '80vw',
+            maxWidth: '600px',
+            height: 'auto',
+            maxHeight: '95vh',
+            zIndex: 1000,
+            border: '4px solid rgba(129, 140, 248)',
+            padding: '20px',
+        },
+        overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.25)',
+            zIndex: 999,
+        }
+    };
 
     const handlePackageClick = (packageName) => {
         window.open(packageUrls[packageName], '_blank');
@@ -139,27 +181,41 @@ const Packages = () => {
             return (
                 <div
                     key={packageKey}
-                    className="bg-transparent border-2 rounded-2xl p-6 mb-4 mr-4 max-w-sm shadow-md cursor-pointer transition-all"
+                    className="bg-transparent border-2 rounded-2xl p-6 mb-4 mr-4 max-w-sm shadow-md cursor-pointer transition-all flex flex-col justify-between gap-4"
                     style={{
                         boxShadow: hoverIndex === index ? '0 0 10px #1F51FF, 0 0 15px #1F51FF, 0 0 20px #1F51FF' : 'none',
                         borderColor: '#106D8F',
                     }}
-                    onClick={() => handlePackageClick(packageKey)}
-                    onMouseEnter={() => setHoverIndex(index)} // Set hover state
-                    onMouseLeave={() => setHoverIndex(null)} // Clear hover state
+                    onMouseEnter={() => setHoverIndex(index)}
+                    onMouseLeave={() => setHoverIndex(null)}
                 >
-                    <h3 className="text-xl font-semibold" style={{ color: '#106D8F' }}>{details.package}</h3>
-                    <p className='text-lg'>{details.wash}</p>
-                    <h4 className="text-xl font-bold text-slate-700 my-2">{details.price}</h4>
-                    <hr className="my-2" />
-                    <ul className="list-disc pl-5 space-y-1">
-                        {details.services.split(', ').map((service, serviceIndex) => (
-                            <li key={serviceIndex} className="text-gray-700 flex align-top">
-                                <CheckCircleIcon className="w-5 h-5 text-blue-300 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                                <span className="align-middle text-base lg:text-sm pl-4 pb-2">{service}</span>
-                            </li>
-                        ))}
-                    </ul>
+                    <div>
+                        <h3 className="text-xl font-semibold" style={{ color: '#106D8F' }}>{details.package}</h3>
+                        <p className='text-lg'>{details.wash}</p>
+                        <hr className="my-2" />
+                        <ul className="list-disc pl-5 space-y-1">
+                            {details.services.split(', ').map((service, serviceIndex) => (
+                                <li key={serviceIndex} className="text-gray-700 flex align-top">
+                                    <CheckCircleIcon className="w-5 h-5 text-blue-300 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                    <span className="align-middle text-base lg:text-sm pl-4 pb-2">{service}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <button
+                        onClick={openModal}
+                        className="w-1/2 self-center rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                        Learn More
+                    </button>
+                    <Modal
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
+                        style={customStyles}
+                    >
+                        <button onClick={closeModal} style={{ float: 'right' }}><XMarkIcon className="h-6 w-6" /></button>
+                        <LeadForm />
+                    </Modal>
                 </div>
             );
         });
