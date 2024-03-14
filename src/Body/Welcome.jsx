@@ -34,7 +34,7 @@ function Welcome() {
           <p className='text-white'>CTMK</p>
           <div className="text-myDb">Mobile Detailing</div>
         </div>
-        <p className="py-2 text-sm sm:text-lg md:text-xl font-light w-full sm:w-10/12 md:w-7/12 text-white">
+        <p className="py-2 text-sm sm:text-lg md:text-xl font-light w-full sm:w-10/12 md:w-7/12 text-slate-800">
           Experience the best in mobile & auto detailing in South Florida with CTMK Mobile Detailing. Rated 5-stars with 50+ reviews, we specialize in Auto Detailing and Ceramic Coating. Book us today!
         </p>
         <p className="pb-4 sm:pb-10 pr-0 md:pr-20 lg:pr-96 text-base md:text-lg lg:text-xl font-medium text-myDb">
