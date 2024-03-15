@@ -127,12 +127,10 @@ const Packages = () => {
     const [hoverIndex, setHoverIndex] = useState(null); // Track hover state
     const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
 
-    // Function to open modal
     const openModal = () => {
         setIsModalOpen(true);
     };
 
-    // Function to close modal
     const closeModal = () => {
         setIsModalOpen(false);
     };
@@ -163,6 +161,14 @@ const Packages = () => {
             zIndex: 999,
         }
     };
+
+    const GTB = {
+        minWidth: '150px',
+        minHeight: '50px',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+      };
 
     const handlePackageClick = (packageName) => {
         window.open(packageUrls[packageName], '_blank');
@@ -205,8 +211,9 @@ const Packages = () => {
                     <button
                         onClick={openModal}
                         className="w-1/2 self-center rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        style={GTB}
                     >
-                        Learn More
+                        Get In Touch
                     </button>
                     <Modal
                         isOpen={isModalOpen}
@@ -224,21 +231,8 @@ const Packages = () => {
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="text-center mb-8">
-                <h1 className='font-semibold text-center text-4xl pb-4'>PREMIUM PACKAGING</h1>
+                <h1 className='font-semibold text-center text-4xl pb-4'>Mobile Detailing</h1>
                 <h2 className='font-light text-center text-xl pb-4'>Select from one of our hand-tailored packages to suit your needs!</h2>
-            </div>
-            <div className="flex justify-center flex-wrap">
-                {vehicleTypes.map((type, index) => (
-                    <button
-                        key={index}
-                        className={`m-2 px-4 py-2 rounded-lg border-2 transition-all
-                            ${selectedPackage === `${index + 1}` ? 'bg-blue-500 text-white border-blue-500' : 'text-gray-800 border-gray-300'}
-                        `}
-                        onClick={() => setSelectedPackage(`${index + 1}`)}
-                    >
-                        {type}
-                    </button>
-                ))}
             </div>
             <div className="flex justify-center items-center lg:items-stretch flex-col lg:flex-row">
                 {updatePackageDetails(selectedPackage)}

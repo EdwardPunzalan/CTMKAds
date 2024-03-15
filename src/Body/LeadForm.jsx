@@ -14,6 +14,7 @@ export default function LeadForm() {
                             </label>
                             <div className="mt-2">
                                 <input
+                                    required
                                     type="text"
                                     name="first-name"
                                     id="first-name"
@@ -30,6 +31,7 @@ export default function LeadForm() {
                             <div className="mt-2">
                                 <input
                                     type="text"
+                                    required
                                     name="last-name"
                                     id="last-name"
                                     autoComplete="family-name"
@@ -45,6 +47,7 @@ export default function LeadForm() {
                             <div className="mt-2">
                                 <input
                                     id="email"
+                                    required
                                     name="email"
                                     type="email"
                                     autoComplete="email"
@@ -57,6 +60,7 @@ export default function LeadForm() {
                             <div className="mt-2">
                                 <input
                                     id="phone"
+                                    required
                                     name="phone"
                                     type="tel"
                                     autoComplete="tel"
@@ -74,7 +78,7 @@ export default function LeadForm() {
                     type="submit"
                     className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                    Book Now
+                    Done
                 </button>
             </div>
         </form>

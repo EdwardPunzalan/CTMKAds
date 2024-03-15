@@ -1,33 +1,75 @@
-import React from 'react';
+import {useState} from 'react';
 import Logo from '../assets/Logo.png';
 import fb from '../assets/fb.png';
 import insta from '../assets/insta.png';
 import ttok from '../assets/ttok.png';
+import Modal from 'react-modal';
+import LeadForm from '../Body/LeadForm.jsx';
+import { XMarkIcon } from '@heroicons/react/24/solid';
+
+Modal.setAppElement('#root');
+
 
 function FooterAbout() {
-    // Function to handle "Book Now" button click
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     const handleBookNowClick = (e) => {
-        e.preventDefault(); // Prevent the default anchor link behavior
+        e.preventDefault();
+        openModal();
+    };
 
-        // Meta Pixel tracking for the booking event
-        fbq('track', 'Lead', {
-            content_name: 'Book Now Footer',
-            content_category: 'Booking',
-        });
-
-        // After tracking, redirect to the booking page
-        window.location.href = "https://api.leadconnectorhq.com/widget/service-menu/65e358086ba2ab3555cad7f2";
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            background: '#fff',
+            overflow: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            borderRadius: '4px',
+            outline: 'none',
+            width: '80vw',
+            maxWidth: '600px',
+            height: 'auto',
+            maxHeight: '95vh',
+            zIndex: 1000,
+            border: '4px solid rgba(129, 140, 248)',
+            padding: '20px',
+        },
+        overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.25)',
+            zIndex: 999,
+        }
     };
 
     return (
         <div>
             <div className='flex flex-col md:flex-row px-4 md:px-24 pt-5 justify-between items-center'>
                 <img src={Logo} className="w-24 mb-4 md:mb-0" alt="CTMK Mobile Detailing Logo" />
-                <a href="https://api.leadconnectorhq.com/widget/service-menu/65e358086ba2ab3555cad7f2" 
-                   className='border-2 border-[#106D8F] text-[#106D8F] hover:bg-[#1F51FF] hover:text-white p-4 px-10 rounded-xl bg-transparent hover:shadow-md hover:shadow-[#1F51FF]' 
-                   onClick={handleBookNowClick}>
-                    Book Now
-                </a>
+                <button
+            onClick={handleBookNowClick}
+            className="h-12 text-center sm:h-auto bg-bn hover:bg-red-500 py-2 px-4 sm:py-4 sm:px-8 md:px-10 lg:py-4 lg:px-12 rounded-lg font-light drop-shadow text-lg sm:text-sm md:text-base lg:text-lg transition ease-in-out duration-150">
+            Get In Touch
+          </button>
+          <Modal
+            isOpen={isModalOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+          >
+            <button onClick={closeModal} style={{ float: 'right' }}><XMarkIcon className="h-6 w-6" /></button>
+            <LeadForm />
+          </Modal>
             </div>
             <div className='flex flex-col md:flex-row justify-between px-4 md:px-24 py-5 items-center'>
                 <p className='mb-4 md:mb-0 md:w-96 font-semibold text-center md:text-left text-sm md:text-lg'>
