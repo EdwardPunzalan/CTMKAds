@@ -15,7 +15,7 @@ function Quotes() {
             </div>
             <br />
             <div className='flex justify-center'>
-                <a href="tel:+19549450770" className="bg-bn hover:bg-red-500 py-2 px-6 sm:px-8 md:py-3 md:px-10 lg:py-4 lg:px-12 text-sm sm:text-base md:text-lg rounded-lg font-light drop-shadow">Call Now</a>
+                <a href="tel:+19549450770" className="bg-blue-400 hover:bg-blue-500 py-2 px-6 sm:px-8 md:py-3 md:px-10 lg:py-4 lg:px-12 text-sm sm:text-base md:text-lg rounded-lg font-light drop-shadow">Call Now</a>
             </div>
         </div>
     );

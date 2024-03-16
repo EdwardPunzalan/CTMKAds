@@ -42,7 +42,7 @@ function Footer() {
                 <div className="hidden md:block" style={{ borderLeft: '1px solid #000', height: '20px' }}></div>
                 <div className='flex gap-1'>
                     <p className='text-lg font-semibold'>Built by</p>
-                    <a href="https://edwardpunzalan.github.io/webdev/" className='text-lg font-bold' style={PS}>Punzi Studios</a>
+                    <a href="https://punzi-studios.vercel.app/" className='text-lg font-bold' style={PS}>Punzi Studios</a>
                 </div>
             </div>
         </footer>
