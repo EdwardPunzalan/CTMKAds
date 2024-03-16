@@ -6,6 +6,7 @@ function Welcome() {
     <div className="relative h-screen overflow-hidden">
       <video
         autoPlay
+        playsInline
         muted
         loop
         id="video"

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Correctly import useState
+import React, { useState } from 'react';
 import videoSource from '../assets/About.mp4';
 import 'animate.css';
 import Modal from 'react-modal';
@@ -54,6 +54,7 @@ function Welcome() {
     <div className="relative h-screen overflow-hidden">
       <video
         autoPlay
+        playsInline
         muted
         loop
         id="video"
